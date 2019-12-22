@@ -1,0 +1,16 @@
+APP_URL=http://localhost:3333
+NODE_ENV=development
+
+
+# Auth
+APP_SECRET=blueticketnode
+
+
+# Database
+DB_HOST=localhost
+DB_USER=postgres
+DB_PASS=docker
+DB_NAME=blueticket
+
+# Sentry
+SENTRY_DSN=https://5e39df62ed2647e49c64f843dd8f6c15@sentry.io/1722541

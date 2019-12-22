@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "name": "Blueticket Events API",
+  "description": "API regarding to users and user events",
+  "url" : "http://localhost:3333/"
+}
