@@ -17,10 +17,10 @@ class SessionController {
     });
 
     if (!user) {
-      return res.status(401).json({ error: 'Usuário não existe' });
+      return res.status(401).json({ error: 'Usuário não existe!' });
     }
     if (!(await user.checkPassword(password))) {
-      return res.status(401).json({ error: 'Senha não combina' });
+      return res.status(401).json({ error: 'Senha não combina!' });
     }
 
     const { id, name, avatar } = user;
