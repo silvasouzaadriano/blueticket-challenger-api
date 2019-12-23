@@ -101,6 +101,9 @@ class EventController {
   async store(req, res) {
     const { title, description, location, date, banner_id } = req.body;
 
+    /* VERIFYING IF DATE IS INVALID */
+    if (parseISO(date) == 'Invalid Date') throw new Error('Data inválida!');
+
     /* VERIFYING THE BANNER */
     if (banner_id) {
       const image = await File.findByPk(banner_id);
@@ -137,6 +140,9 @@ class EventController {
       if (event.past) throw new Error('Evento já finalizado');
       if (req.userId !== event.owner_id)
         throw new Error(`Você não é o dono desse evento`);
+
+      /* VERIFYING IF DATE IS INVALID */
+      if (parseISO(date) == 'Invalid Date') throw new Error('Data inválida!');
 
       /* VERIFYING THE BANNER */
       if (banner_id && banner_id !== Event.banner_id) {
